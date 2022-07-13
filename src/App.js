@@ -1,31 +1,31 @@
 
 import './App.css';
-import { useState} from 'react'
-import ResponsiveAppBar from './MaterialUI/ResponsiveAppBar';
-import RecipeReviewCard from './MaterialUI/RecipeReviewCard';
+import Home from './Componentes/Home';
+import FormLogin from './Componentes/Login/Login';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  
+} from "react-router-dom";
+import { useSelector } from 'react-redux';
 function App() {
-
-  const link = "https://postagem-back.vercel.app/"
-  //const url = 'http://localhost:4000/'
-  const [postagens,setPostagens]=useState([])
-  async function getPost() {
-     let lista = await fetch(link).then(res=>res.json())
-     setPostagens(lista)
-   }
-   getPost()
-
+  let logado = useSelector(state=>state.loginReducer.logado)
+  const Private = ()=>{
+     return <div>
+      {logado?<Home/>:<Navigate to="/"/>}
+     </div>
+  }
   return (
     <div className="App">
-      <header className="App-header ">
-      <ResponsiveAppBar/>  
-      <div className='postContainer'>
-      {postagens.map(item=>{
-          return<div >
-              <RecipeReviewCard item={item}/>
-          </div>
-        })}
-      </div>
-      </header>
+    <BrowserRouter>
+      <Routes>
+        <Route  path="/" element={<FormLogin />} />
+        <Route path="home" element={<Home />} />
+        
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }

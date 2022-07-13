@@ -1,0 +1,24 @@
+.camposForm{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 30%;
+    height: 50%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+.ContainerForm{
+    background-color: rgb(127, 178, 255);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:500px) {
+    .camposForm{
+        width: 97%;
+        margin:20% auto;
+        margin: 8px;
+    }
+}

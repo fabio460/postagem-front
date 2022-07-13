@@ -12,13 +12,23 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import FormDialog from './FormDialog';
+import { useNavigate } from 'react-router-dom';
 //const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const ResponsiveAppBar = () => {
+
+
+const ResponsiveAppBar = ({usuarioLogado}) => {
   const [ setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  let navigate =useNavigate();
+  const Logout =async ()=>{
+    
+    
+      localStorage.setItem('usuarioLogado',null)
+    
+    
+  }
+  const settings = ['Profile', 'Account', 'Dashboard', <div onClick={Logout}>Logout</div>];
   // const handleOpenNavMenu = (event) => {
   //   setAnchorElNav(event.currentTarget);
   // };
@@ -54,7 +64,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            {usuarioLogado&&usuarioLogado.nome}
           </Typography>
       
      
@@ -75,7 +85,7 @@ const ResponsiveAppBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'block', md: 'flex' } }}>
             
@@ -92,7 +102,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt={usuarioLogado&&usuarioLogado.nome} src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
