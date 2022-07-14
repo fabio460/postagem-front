@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react'
 import ResponsiveAppBar from '../MaterialUI/ResponsiveAppBar'
 import RecipeReview from '../MaterialUI/RecipeReviewCard'
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 export default function Home() {
     let navigate = useNavigate();
     const link = "https://postagem-back.vercel.app/"
@@ -16,13 +16,12 @@ export default function Home() {
      getPost()
      let logado = useSelector(state=>state.loginReducer.logado)
   
-     const dispath = useDispatch()
      let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
      useEffect(()=>{
        
         setUsuario(usuarioLogado)
     
-        if(usuarioLogado === null){
+        if(logado === "false"){
             navigate("/"); 
         }
         

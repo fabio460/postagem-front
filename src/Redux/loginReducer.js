@@ -1,5 +1,5 @@
 const inicial = {
-    logado:false
+    logado:localStorage.getItem('logado')
 }
 
 const loginReducer = (state=inicial,action)=>{

@@ -12,7 +12,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import FormDialog from './FormDialog';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 //const pages = ['Products', 'Pricing', 'Blog'];
 
 
@@ -20,13 +20,14 @@ import { useNavigate } from 'react-router-dom';
 const ResponsiveAppBar = ({usuarioLogado}) => {
   const [ setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  let navigate =useNavigate();
+  let dispath =useDispatch();
   const Logout =async ()=>{
-    
-    
+    dispath({
+      type:"logado",
+      payload:{logado:"false"}
+     })
       localStorage.setItem('usuarioLogado',null)
-    
-    
+      localStorage.setItem('logado','false')
   }
   const settings = ['Profile', 'Account', 'Dashboard', <div onClick={Logout}>Logout</div>];
   // const handleOpenNavMenu = (event) => {

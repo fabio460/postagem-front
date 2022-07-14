@@ -46,11 +46,6 @@ export default function FormLogin() {
   const [errorDesenha,setErroDeSenha] =useState(false)
   const [ erroDeEmail,setErroDeEmail] = useState(false)
 
-  const login={
-      email:'fabio@gmail',
-      senha:'fabio',
-      token:"jhdlahsdlksadbasdbsldkasda"
-  }
   const Logar =async ()=>{
     const formdata = new FormData()
     formdata.append('email',email)
@@ -75,10 +70,11 @@ export default function FormLogin() {
              setErroDeSenha(false)
              dispath({
               type:"logado",
-              payload:{logado:'true'}
+              payload:{logado:"true"}
              })
                  let usuarioStr = JSON.stringify(usuario);
                  localStorage.setItem('usuarioLogado',usuarioStr)
+                 localStorage.setItem('logado','true')
          }
      }
 
@@ -87,10 +83,8 @@ export default function FormLogin() {
   let logado = useSelector(state=>state.loginReducer.logado)
   useEffect(()=>{
     console.log("key: "+localStorage.getItem('usuarioLogado'))
-     if(localStorage.getItem('usuarioLogado') === 'null'){
-         navigate("/");
-     }else{
-      navigate("/home");
+     if(logado==="true"){
+         navigate("/home");
      }
      
   },[logado,navigate])
