@@ -29,6 +29,9 @@ const ResponsiveAppBar = ({usuarioLogado}) => {
       localStorage.setItem('usuarioLogado',null)
       localStorage.setItem('logado','false')
   }
+  // setTimeout(() => {
+  //   Logout()
+  // }, 1000000);
   const settings = ['Profile', 'Account', 'Dashboard', <div onClick={Logout}>Logout</div>];
   // const handleOpenNavMenu = (event) => {
   //   setAnchorElNav(event.currentTarget);
@@ -65,7 +68,7 @@ const ResponsiveAppBar = ({usuarioLogado}) => {
               textDecoration: 'none',
             }}
           >
-            {usuarioLogado&&usuarioLogado.nome}
+            {usuarioLogado&&usuarioLogado.userName}
           </Typography>
       
      
@@ -103,7 +106,7 @@ const ResponsiveAppBar = ({usuarioLogado}) => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt={usuarioLogado&&usuarioLogado.nome} src="/static/images/avatar/2.jpg" />
+                <Avatar alt={usuarioLogado&&usuarioLogado.nome} src={usuarioLogado&&usuarioLogado.avatar} />
               </IconButton>
             </Tooltip>
             <Menu

@@ -16,16 +16,20 @@ export default function Home() {
      getPost()
      let logado = useSelector(state=>state.loginReducer.logado)
   
-     let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
+     
      useEffect(()=>{
-       
+        let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
         setUsuario(usuarioLogado)
-    
+        console.log(usuarioLogado)
         if(logado === "false"){
             navigate("/"); 
         }
-        
-     },[logado,navigate,usuarioLogado])
+        if(usuarioLogado === null){
+            navigate("/"); 
+        }
+        console.log(usuarioLogado)
+     },[logado,navigate])
+     
   return (
     <div>
         <header className="App-header ">

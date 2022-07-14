@@ -21,7 +21,8 @@ export default function FormDialog() {
   };
 
   const link = "https://postagem-back.vercel.app/upload"
-  // const linkoff = "http://localhost:4000/upload"
+  // const link = "http://localhost:4000/upload"
+  let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
   function fazerPostagem(params) {
     try {
            
@@ -30,6 +31,9 @@ export default function FormDialog() {
       formdata.append("imagem",imagem)
       formdata.append("titulo",titulo)
       formdata.append("postagem",postagem)
+      formdata.append('avatar',usuarioLogado.avatar)
+      formdata.append('userName',usuarioLogado.userName)
+      formdata.append('email',usuarioLogado.email)
       fetch(link,{
         method:"POST",
         body:formdata
@@ -58,17 +62,23 @@ export default function FormDialog() {
             autoFocus
             margin="dense"
             id="titulo"
-            label=""
+            label="Titulo"
             type="text"
             fullWidth
             value={titulo}
             onChange={e=>setTitulo(e.target.value)}
+            
           />
           <TextField
+        
+             
+             multiline
+             rows={4}
+            
             autoFocus
             margin="dense"
             id="postagem"
-            label=""
+            label="Sua postagem"
             type="text"
             fullWidth
             value={postagem}
