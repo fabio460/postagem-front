@@ -7,6 +7,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import Cadastrar from './Componentes/Cadastrar.js/Cadastrar';
 function App() {
   return (
     <div className="App">
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<FormLogin />} />
         <Route path="home" element={<Home />} />
-        
+        <Route exact path="/cadastrar" element={<Cadastrar />} />
       </Routes>
     </BrowserRouter>
     </div>

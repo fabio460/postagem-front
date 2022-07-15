@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import {useState} from 'react'
+import UploadButtons from './UploadButtons';
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
   const [imagem,setImagem]=useState()
@@ -25,7 +26,7 @@ export default function FormDialog() {
   let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
   function fazerPostagem(params) {
     try {
-           
+    alert(imagem)       
     if(titulo && postagem && imagem){
       const formdata = new FormData()
       formdata.append("imagem",imagem)
@@ -84,7 +85,7 @@ export default function FormDialog() {
             value={postagem}
             onChange={e=>setPostagem(e.target.value)}
           />
-          <TextField
+          {/* <TextField
             autoFocus
             margin="dense"
             id="imagem"
@@ -92,8 +93,8 @@ export default function FormDialog() {
             type="file"
             fullWidth
             onChange={e=>setImagem(e.target.files[0])}
-          />
-      
+          /> */}
+          <UploadButtons setImagem={setImagem}/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancelar</Button>

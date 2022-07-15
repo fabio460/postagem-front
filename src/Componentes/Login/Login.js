@@ -89,7 +89,9 @@ export default function FormLogin() {
      
   },[logado,navigate])
   
-  //console.log(localStorage.getItem("logado"))
+ const cadastrar = ()=>{
+  navigate("/cadastrar");
+ }
   return (
   <div className='ContainerForm'>  
     <div className='camposForm'>
@@ -125,7 +127,7 @@ export default function FormLogin() {
                     label="Password"
                 />
             </FormControl>
-            <div className='text_cadastrar'>Não é cadastrado? <span id='textoCadrastese'>Cadastre-se</span></div>
+            <div className='text_cadastrar'>Não é cadastrado? <span onClick={cadastrar} id='textoCadrastese'>Cadastre-se</span></div>
             <Button variant="contained" sx={{width:"100%"}} onClick={Logar}>Logar</Button>
     </div>
   </div>  

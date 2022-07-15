@@ -15,6 +15,17 @@
     justify-content: center;
     align-items: center;
 }
+#textoCadrastese{
+    color: red;
+    cursor: pointer;
+}
+#textoCadrastese:hover{
+    color: brown;
+}
+.text_cadastrar{
+    margin: 13px 0px;
+    
+}
 @media (max-width:500px) {
     .camposForm{
         width: 97%;
