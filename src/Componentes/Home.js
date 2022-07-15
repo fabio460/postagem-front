@@ -11,7 +11,7 @@ export default function Home() {
     const [usuario,setUsuario]=useState(null)
     async function getPost() {
        let lista = await fetch(link).then(res=>res.json())
-       setPostagens(lista)
+       setPostagens(lista.reverse())
      }
      getPost()
      let logado = useSelector(state=>state.loginReducer.logado)
@@ -27,7 +27,7 @@ export default function Home() {
         if(usuarioLogado === null){
             navigate("/"); 
         }
-        console.log(usuarioLogado)
+        
      },[logado,navigate])
      
   return (
