@@ -26,7 +26,7 @@ export default function FormDialog() {
   let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
   function fazerPostagem(params) {
     try {
-    alert(imagem)       
+       
     if(titulo && postagem && imagem){
       const formdata = new FormData()
       formdata.append("imagem",imagem)
