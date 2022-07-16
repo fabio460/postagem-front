@@ -84,14 +84,14 @@ export default function Post({item}) {
           
           <h3 style={{wordWrap:"break-word"}}>{item.titulo}</h3>
            postado por <span style={{fontWeight:"bolder",wordWrap:"break-word"}}>{item.userName}</span>
-          <span style={{wordWrap:"break-word"}}> - {dataTransform(item.data)}</span>
+          <span style={{wordWrap:"break-word",fontSize:"10px"}}> - {dataTransform(item.data)}</span>
 
         </div>
-          <span style={{display:"flex" ,justifyContent:"flex-end",width:"100%"}}>
-            <IconButton aria-label="settings">
-                <DeleteIcon onClick={deletar} color='error'/>
-            </IconButton>
-          </span>
+        <span style={{display:"flex" ,justifyContent:"flex-end",width:"100%"}}>
+        <IconButton aria-label="settings">
+            <DeleteIcon onClick={deletar} color='error'/>
+        </IconButton>
+        </span>
       </div>
       <div className='postBodyItemTitle'>{item.postagem}</div>
       <div style={{display:"flex",justifyContent:"center"}}><img className='imagemPost' src={item.imagem} alt='sem imagem'/></div>
