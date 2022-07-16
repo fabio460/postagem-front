@@ -1,8 +1,9 @@
 import React,{useEffect, useState} from 'react'
 import ResponsiveAppBar from '../MaterialUI/ResponsiveAppBar'
-import RecipeReview from '../MaterialUI/RecipeReviewCard'
+//import RecipeReview from '../MaterialUI/RecipeReviewCard'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Post from './Post.js/Post';
 export default function Home() {
     let navigate = useNavigate();
     const link = "https://postagem-back.vercel.app/"
@@ -35,11 +36,19 @@ export default function Home() {
         <header className="App-header ">
             <ResponsiveAppBar usuarioLogado={usuario}/>  
             <div className='postContainer'>
-            {postagens.map(item=>{
-                return<div >
-                    <RecipeReview item={item}/>
-                </div>
-                })}
+             <div className='postSidebar'>
+                sidebar
+             </div>
+             <div className='postBody'>
+                {postagens.map(item=>{
+                    return<div >
+                        <Post item={item}/>
+                    </div>
+                })}     
+
+                
+             </div>   
+           
             </div>
         </header>
     </div>

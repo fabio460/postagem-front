@@ -3,24 +3,64 @@
   margin: 0%;
   padding: 0%;
 }
-.App {
-  text-align: center;
 
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 .postContainer{
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 15px;
-  padding: 50px;
+  grid-template-columns: 1fr 4fr;
+  margin: 10px 30px;
+  
+}
+.postBodyItem{
+  background-color: #303744;
+  margin: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.postBodyItemHeader{
+  display: flex;
+}
+.postBodyItemTitle{
+  margin: 10px 0px;
+  word-wrap: break-word;
+  width: 100%;
+}
+.imagemPost{
+  max-width: 70%;
+  max-height: 400px;
+  margin: auto;
+}
+.postBodyItemFooter{
+  display: flex;
+  justify-content: flex-end;
 }
 @media (max-width:500px) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .imagemPost{
+    max-width:100%;
+    margin: auto;
+    height: 70%;
+  }
+  .postBodyItemTitle{
+    margin: 10px 0px;
+    word-wrap: break-word;
+    width: 85vw;
+  }
+  .postSidebar{
+    display: none;
+  }
+  .postContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0px;
+    
+  }
+  .postBodyItem{
+    background-color: #303744;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .postBodyItemHeader{
+    display: flex;
   }
   .postContainer{
     display: grid;
@@ -29,31 +69,16 @@
     padding: 10px;
    
   }
+  .postBodyItemHeaderBody{
+    word-wrap: break-word;
+  }
 }
-.MuiCardHeader-root css-185gdzj-MuiCardHeader-root{
-  width: 100%;
-  padding: 0%;
-}
-.MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-inzans-MuiPaper-root-MuiCard-root{
-  margin: 0px;
-}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   width: 100vw;
-  font-size: calc(10px + 2vmin);
+  
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
