@@ -4,6 +4,7 @@ import ResponsiveAppBar from '../MaterialUI/ResponsiveAppBar'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Post from './Post.js/Post';
+import SideBar from './SideBar/SideBar';
 //import BackToTop from '../MaterialUI/BackToTop';
 export default function Home() {
     let navigate = useNavigate();
@@ -38,7 +39,7 @@ export default function Home() {
             <ResponsiveAppBar usuarioLogado={usuario}/>  
             <div className='postContainer'>
              <div className='postSidebar'>
-                sidebar
+                <SideBar/>
              </div>
              <div className='postBody'>
                 {postagens.map(item=>{

@@ -5,6 +5,7 @@ import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 
+import DeleteIcon from '@mui/icons-material/Delete';
 export default function Post({item}) {
   
   function dataTransform(data) {
@@ -52,27 +53,51 @@ export default function Post({item}) {
         default:
             break;
     }
-    return dias[2]+" de "+dias[1]+" as "+horas[0]+":"+horas[1]
-  }  
+    let hora = parseInt(horas[0])-3
+    let minutos = parseInt(horas[1])+3
+    if (hora < 10) {
+        hora = "0"+hora.toString()
+    }
+    if (minutos < 10) {
+        minutos = "0"+minutos.toString()
+    }
 
+    return dias[2]+" de "+dias[1]+" as "+hora+":"+minutos
+  }  
+  const deletar = ()=>{
+    let arquivo = item.imagem.split('/')
+    let fileName = arquivo[arquivo.length - 1]
+    const formdata = new FormData()
+    formdata.append("_id",item._id)
+    formdata.append("fileName",fileName)
+    fetch("https://postagem-back.vercel.app/delete",{
+        method:"DELETE",
+        body:formdata
+    })
+  
+  }
   return (
     <div className='postBodyItem'>
       <div className='postBodyItemHeader'>
         <Avatar src={item.avatar} sx={{}}/>
         <div className='postBodyItemHeaderBody'>
           
-          <h3 style={{wordWrap:"break-word",width:"60vw"}}>{item.titulo}</h3>
-           postado por <span style={{fontWeight:"bolder",wordWrap:"break-word",width:"60vw"}}>{item.userName}</span>
+          <h3 style={{wordWrap:"break-word"}}>{item.titulo}</h3>
+           postado por <span style={{fontWeight:"bolder",wordWrap:"break-word"}}>{item.userName}</span>
           <span style={{wordWrap:"break-word"}}> - {dataTransform(item.data)}</span>
+
         </div>
+          <span style={{display:"flex" ,justifyContent:"flex-end",width:"100%"}}>
+            <IconButton aria-label="settings">
+                <DeleteIcon onClick={deletar} color='error'/>
+            </IconButton>
+          </span>
       </div>
       <div className='postBodyItemTitle'>{item.postagem}</div>
       <div style={{display:"flex",justifyContent:"center"}}><img className='imagemPost' src={item.imagem} alt='sem imagem'/></div>
       <div className='postBodyItemFooter'>
         <div>
-            {/* <span><Button><ChatBubbleIcon/></Button></span>
-            <span><Button><FavoriteIcon/></Button></span> */}
-            <Stack direction="row" spacing={1}>
+            <Stack direction="row" spacing={0}>
                 <IconButton aria-label="delete" color="primary">
                     <ChatBubbleIcon />
                 </IconButton>

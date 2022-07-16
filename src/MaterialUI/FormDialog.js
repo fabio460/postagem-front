@@ -70,12 +70,9 @@ export default function FormDialog() {
             onChange={e=>setTitulo(e.target.value)}
             
           />
-          <TextField
-        
-             
-             multiline
-             rows={4}
-            
+          <TextField 
+            multiline
+            rows={4}
             autoFocus
             margin="dense"
             id="postagem"
