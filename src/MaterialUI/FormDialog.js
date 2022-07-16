@@ -91,7 +91,7 @@ export default function FormDialog() {
             fullWidth
             onChange={e=>setImagem(e.target.files[0])}
           /> */}
-          <UploadButtons setImagem={setImagem}/>
+          <UploadButtons setImagem={setImagem} imagem={imagem}/>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancelar</Button>
