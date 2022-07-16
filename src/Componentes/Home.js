@@ -4,6 +4,7 @@ import ResponsiveAppBar from '../MaterialUI/ResponsiveAppBar'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Post from './Post.js/Post';
+//import BackToTop from '../MaterialUI/BackToTop';
 export default function Home() {
     let navigate = useNavigate();
     const link = "https://postagem-back.vercel.app/"
@@ -50,6 +51,7 @@ export default function Home() {
              </div>   
            
             </div>
+            
         </header>
     </div>
   )
