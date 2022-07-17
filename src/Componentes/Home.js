@@ -3,8 +3,9 @@ import ResponsiveAppBar from '../MaterialUI/ResponsiveAppBar'
 //import RecipeReview from '../MaterialUI/RecipeReviewCard'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Post from './Post.js/Post';
+//import Post from './Post.js/Post';
 import SideBar from './SideBar/SideBar';
+import Post2 from './Post.js/Post2';
 //import BackToTop from '../MaterialUI/BackToTop';
 export default function Home() {
     let navigate = useNavigate();
@@ -23,7 +24,6 @@ export default function Home() {
      useEffect(()=>{
         let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
         setUsuario(usuarioLogado)
-        console.log(usuarioLogado)
         if(logado === "false"){
             navigate("/"); 
         }
@@ -44,7 +44,7 @@ export default function Home() {
              <div className='postBody'>
                 {postagens.map(item=>{
                     return<div >
-                        <Post item={item}/>
+                        <Post2 item={item}/>
                     </div>
                 })}     
 
