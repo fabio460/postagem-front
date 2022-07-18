@@ -44,15 +44,22 @@ export function dataTransform(data) {
             break;
     }
     let hora = parseInt(horas[0])-3
+    //console.log(hora)
     let minutos = parseInt(horas[1])+3
     if (hora < 10) {
         hora = "0"+hora.toString()
+    }else{
+       
+    }
+    if (hora < 0) {
+        console.log(hora)
     }
     if (minutos < 10) {
         minutos = "0"+minutos.toString()
     }
 
     return dias[2]+" de "+dias[1]+" as "+hora+":"+minutos
+    //return data
 }
 
 export function deletar(item){

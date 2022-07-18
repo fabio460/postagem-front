@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import FormDialog from './FormDialog';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 //const pages = ['Products', 'Pricing', 'Blog'];
 
 
@@ -21,6 +22,7 @@ const ResponsiveAppBar = ({usuarioLogado}) => {
   const [ setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   let dispath =useDispatch();
+  let navigate = useNavigate();
   const Logout =async ()=>{
     dispath({
       type:"logado",
@@ -28,6 +30,7 @@ const ResponsiveAppBar = ({usuarioLogado}) => {
      })
       localStorage.setItem('usuarioLogado',null)
       localStorage.setItem('logado','false')
+      navigate('/')
   }
   // setTimeout(() => {
   //   Logout()
@@ -49,7 +52,7 @@ const ResponsiveAppBar = ({usuarioLogado}) => {
   };
 
   return (
-    <AppBar position="static" >
+    <AppBar position="fixed" >
       <Container maxWidth="xl" sx={{background:"#485d63" }}>
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1}} />

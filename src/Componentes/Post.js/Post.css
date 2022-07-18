@@ -2,6 +2,7 @@
     background-color: rgb(99, 96, 96);
     padding: 5px;
     margin: 5px;
+    
 }
 .post_header_left{
     display: flex;
@@ -24,6 +25,20 @@
 .post_body{
     display: flex;
     justify-content: center;
+    
+}
+.postBody{
+    overflow-y: scroll;
+    height: calc(100vh - 80.5px);
+    width: 100%;
+}
+.postBody::-webkit-scrollbar{
+    width: 8px;
+ 
+}
+.postBody::-webkit-scrollbar-thumb{
+    background-color: darkgray;
+    border-radius: 5px;
 }
 .post_footer{
     margin: 10px 0px;
@@ -35,6 +50,18 @@
 }
 .post_header_left_data{
     font-size: 12px;
+}
+.postSidebar{
+    overflow-y: scroll;
+    height: calc(100vh - 80.5px);
+  }
+.postSidebar::-webkit-scrollbar{
+    width: 8px;
+ 
+}
+.postSidebar::-webkit-scrollbar-thumb{
+    background-color: darkgray;
+    border-radius: 5px;
 }
 @media (max-width:756px) {
     .post_body_imagem{
