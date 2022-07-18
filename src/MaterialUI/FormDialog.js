@@ -60,7 +60,7 @@ export default function FormDialog() {
            Faça sua postagem
           </DialogContentText>
           <TextField
-            autoFocus
+            
             margin="dense"
             id="titulo"
             label="Titulo"
@@ -73,7 +73,7 @@ export default function FormDialog() {
           <TextField 
             multiline
             rows={4}
-            autoFocus
+            
             margin="dense"
             id="postagem"
             label="Sua postagem"
