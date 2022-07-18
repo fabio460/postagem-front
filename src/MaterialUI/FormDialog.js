@@ -54,10 +54,10 @@ export default function FormDialog() {
         postar
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Post de imagens</DialogTitle>
+        <DialogTitle>Faça sua postagem</DialogTitle>
         <DialogContent>
           <DialogContentText>
-           Faça sua postagem
+           
           </DialogContentText>
           <TextField
             
