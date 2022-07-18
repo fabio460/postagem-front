@@ -20,7 +20,7 @@ export default function Home() {
      getPost()
      let logado = useSelector(state=>state.loginReducer.logado)
   
-     
+     //let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
      useEffect(()=>{
         let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
         setUsuario(usuarioLogado)
@@ -32,7 +32,32 @@ export default function Home() {
         }
         
      },[logado,navigate])
-     
+     var likes = [
+        {
+            enviadoPor:"Marcio",
+            recebidoPor:"fabio@gmail.com"
+        },
+        {
+            enviadoPor:"ruth",
+            recebidoPor:'oliveira@gmail.com'
+        },
+        {
+            enviadoPor:"ana",
+            recebidoPor:'oliveira@gmail.com'
+        },
+        {
+            enviadoPor:"ruth",
+            recebidoPor:"fabio@gmail.com"
+        },
+        {
+            enviadoPor:"junior",
+            recebidoPor:"giovana@gmail.com"
+        },
+        {
+            enviadoPor:"Felipe",
+            recebidoPor:"fabio@gmail.com"
+        }
+      ]
   return (
     <div>
         <header className="App-header ">
@@ -44,7 +69,7 @@ export default function Home() {
              <div className='postBody'>
                 {postagens.map(item=>{
                     return<div >
-                        <Post2 item={item}/>
+                        <Post2 likes={likes} item={item}/>
                     </div>
                 })}     
 

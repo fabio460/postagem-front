@@ -20,7 +20,7 @@
     word-wrap: break-word;
 }
 .post_body_imagem{
-    max-width: 80%;
+    max-width: 60%;
 }
 .post_body{
     display: flex;
