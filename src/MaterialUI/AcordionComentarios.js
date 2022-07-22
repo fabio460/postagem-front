@@ -1,12 +1,8 @@
 
 
 import React, { useEffect, useState } from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-
-import { Avatar, Button } from '@mui/material';
+import { Avatar } from '@mui/material';
 import { link } from '../uteis';
 
 export default function AcordionComentarios({postagemId}) {
@@ -20,23 +16,12 @@ export default function AcordionComentarios({postagemId}) {
                 method:'POST',
                 body:formdata2
             }).then(res=>res.json())
-            setComentarios(list)
+            setComentarios(list.reverse())
           }
       getComentarios()
-      //console.log(comentarios)
     },[comentarios,postagemId])
   return (
     <div>
-      <Accordion>
-        <AccordionSummary
-          
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          
-          <Button>comentarios</Button>
-        </AccordionSummary>
-        <AccordionDetails>
           <Typography>
              {comentarios.map(elem=>{
                 return<div style={{display:'flex'}}>
@@ -48,8 +33,6 @@ export default function AcordionComentarios({postagemId}) {
                 </div>
              })}
           </Typography>
-        </AccordionDetails>
-      </Accordion>
       
    
     </div>

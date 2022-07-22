@@ -12,10 +12,13 @@ body{
 }
 .post_header_left{
     display: flex;
+   
 }
 .post_header{
     display: flex;
     justify-content: space-between;
+    
+    padding: 10px;
 }
 .post_header_left_titulo{
     max-width: 370px;

@@ -82,7 +82,7 @@ export default function FormLogin() {
   }
   let logado = useSelector(state=>state.loginReducer.logado)
   useEffect(()=>{
-    console.log("key: "+localStorage.getItem('usuarioLogado'))
+    
      if(logado==="true"){
          navigate("/home");
      }
