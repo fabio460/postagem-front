@@ -6,7 +6,7 @@ import NearMeIcon from '@mui/icons-material/NearMe';
 
 import { Avatar } from '@mui/material';
 
-export default function InputComentarios() {
+export default function InputComentarios({avatar}) {
   return (
     <Paper
       
@@ -23,7 +23,7 @@ export default function InputComentarios() {
       }}
     >
        <IconButton color="primary" sx={{ p: '10px' }} aria-label="directions">
-        <Avatar sx={{width:'25px',height:'25px'}} />
+        <Avatar sx={{width:'25px',height:'25px'}} src={avatar}/>
       </IconButton>
       <InputBase
         sx={{ ml: 1, flex: 1 }}

@@ -208,7 +208,7 @@ export default function Post2({item}) {
                     <Divider sx={{margin:'5px auto'}}/>
                     <div className='inputComentarios'> 
                       
-                      <InputComentarios/>
+                      <InputComentarios avatar={usuarioLogado.avatar}/>
                     </div>
                 </div>
         </div>
