@@ -73,4 +73,6 @@ export function deletar(item){
         body:formdata
     })
   
-  }
+}
+export const link = "https://postagem-back.vercel.app/"
+

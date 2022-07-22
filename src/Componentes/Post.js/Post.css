@@ -21,6 +21,7 @@
 }
 .post_body_imagem{
     max-width: 60%;
+    max-height: 300px;
 }
 .post_body{
     display: flex;
@@ -62,6 +63,17 @@
 .postSidebar::-webkit-scrollbar-thumb{
     background-color: darkgray;
     border-radius: 5px;
+}
+.avatarsGrupo{
+    display: flex;
+    margin-left: 15px;
+}
+.likesContainerDown{
+    display: flex;
+    align-items: center;
+}
+.likesContainer{
+    display: flex;
 }
 @media (max-width:756px) {
     .post_body_imagem{
