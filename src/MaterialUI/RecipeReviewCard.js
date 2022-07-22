@@ -166,7 +166,20 @@ export default function RecipeReviewCard({item}) {
   
   }
   
-
+  const [comentarios,setComentarios]=useState([])
+  useEffect(()=>{
+    async function getComentarios() {
+        const formdata2 = new FormData()
+        formdata2.append('postagemId',item._id)
+        let list =await fetch(link+'getComentario',{
+            method:'POST',
+            body:formdata2
+        }).then(res=>res.json())
+        setComentarios(list.reverse())
+      }
+  getComentarios()
+  
+},[comentarios,item])
   return (
     <Card sx={{ maxWidth: '100%',margin:'20px auto' }} className='Post_container'>
        <div >
@@ -246,7 +259,7 @@ export default function RecipeReviewCard({item}) {
           </Button>
         
         <Button sx={{marginLeft:'20px'}}  startIcon={ <CommentIcon />} onClick={handleExpandClick}>
-            comentarios
+           {comentarios.length} comentarios 
         </Button>
         <ExpandMore
           expand={expanded}
@@ -254,7 +267,9 @@ export default function RecipeReviewCard({item}) {
           aria-expanded={expanded}
           aria-label="show more"
         >
-            <ExpandMoreIcon />
+            <div className='btnExpandir'>
+              <ExpandMoreIcon />
+            </div>
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -271,7 +286,7 @@ export default function RecipeReviewCard({item}) {
           </Typography>
          
           <Typography paragraph>
-          <AcordionComentarios postagemId={item._id}/>
+          <AcordionComentarios postagemId={item._id} />
           </Typography>
           
           

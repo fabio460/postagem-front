@@ -111,4 +111,7 @@ body{
         background-color: darkgray;
         border-radius: 5px;
     }
+    .btnExpandir{
+        display: none;
+    }
 }

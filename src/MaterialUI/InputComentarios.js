@@ -11,7 +11,7 @@ export default function InputComentarios({avatar,enviadoPor,recebidoPor,postagem
   
   const comentar = async()=>{
     try {
-       if (mensagem) {
+       if (mensagem !== "") {
         const formdata = new FormData()
         formdata.append('comentario',mensagem)
         formdata.append('enviadoPor',enviadoPor)
@@ -23,8 +23,10 @@ export default function InputComentarios({avatar,enviadoPor,recebidoPor,postagem
             body:formdata
         })
         
+       }else{
+        alert('o campo não pode ser nulo')
        }
-       setMensagem(" ")
+       setMensagem("")
        
     } catch (error) {
         alert(error)
