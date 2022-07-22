@@ -10,7 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+
 import FormDialog from './FormDialog';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -53,9 +53,11 @@ const ResponsiveAppBar = ({usuarioLogado}) => {
 
   return (
     <AppBar position="fixed" >
-      <Container maxWidth="xl" sx={{background:"white",color:'black' }}>
+      <Container maxWidth="xl" sx={{background:"#f7f7f7",color:'black' }}>
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1}} />
+          <div className='logo'>
+            <Avatar src={'https://treino-sepia.vercel.app/static/media/logo.67123f25.png'} sx={{ display: { xs: 'none', md: 'flex' }, mr: 1}} />
+          </div>
           <Typography
             variant="h6"
             noWrap
@@ -75,7 +77,9 @@ const ResponsiveAppBar = ({usuarioLogado}) => {
           </Typography>
       
      
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <div className='logo'>
+            <Avatar src={'https://treino-sepia.vercel.app/static/media/logo.67123f25.png'} sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          </div>
           <Typography
             variant="h5"
             noWrap

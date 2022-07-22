@@ -13,6 +13,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import InputComentarios from '../../MaterialUI/InputComentarios';
+import AcordionComentarios from '../../MaterialUI/AcordionComentarios';
+
 export default function Post2({item}) {
   let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
   const [selecionado,setSelecionado]=useState(false)
@@ -205,11 +207,19 @@ export default function Post2({item}) {
                     <Button sx={{marginLeft:'20px'}}  startIcon={ <CommentIcon />}>
                         comentarios
                     </Button>
+                    
                     <Divider sx={{margin:'5px auto'}}/>
                     <div className='inputComentarios'> 
                       
-                      <InputComentarios avatar={usuarioLogado.avatar}/>
+                      <InputComentarios 
+                         avatar={usuarioLogado.avatar} 
+                         enviadoPor={usuarioLogado.userName}
+                         recebidoPor={item.userName}
+                         postagemId={item._id}
+                      />
                     </div>
+                    <Divider sx={{margin:'15px auto'}}/>
+                    <AcordionComentarios postagemId={item._id}/>
                 </div>
         </div>
     </div>
