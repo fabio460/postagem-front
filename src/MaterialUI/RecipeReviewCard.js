@@ -180,6 +180,16 @@ export default function RecipeReviewCard({item}) {
   getComentarios()
   
 },[comentarios,item])
+
+
+const drawerWidth = {
+  
+  '@media (max-width:756px)' : {
+    fontSize: '8px',
+    
+    
+  }
+}
   return (
     <Card sx={{ maxWidth: '100%',margin:'20px auto' }} className='Post_container'>
        <div >
@@ -204,7 +214,7 @@ export default function RecipeReviewCard({item}) {
             </div>
           </div>
           <Divider sx={{margin:'10px auto'}}/>
-          <div>{item.titulo !=='undefined'   && item.titulo}</div>
+          <div>{item.titulo !=='undefined' && item.titulo}</div>
         <div className='post_body'>
            
             <img className='post_body_imagem' src={item.imagem} alt={item.userName}/>
@@ -255,13 +265,12 @@ export default function RecipeReviewCard({item}) {
       <CardActions disableSpacing
          sx={{padding:'0px 20px'}}
       >
-          <Button  startIcon={ <ThumbUpAltIcon/>} color={selecionado?"primary":"inherit"} onClick={e=> ativo(item)}>
+          <Button sx = {drawerWidth} startIcon={ <ThumbUpAltIcon sx={{margin:'0px',padding:'0px'}}/>} color={selecionado?"primary":"inherit"} onClick={e=> ativo(item)}>
               {selecionado? 'curtido':"curtir"}
           </Button>
-        
-        <Button sx={{marginLeft:'20px'}}  startIcon={ <CommentIcon />} onClick={handleExpandClick}>
-           {comentarios.length} comentarios 
-        </Button>
+            <Button  sx = {drawerWidth}  startIcon={ <CommentIcon sx={{margin:'0px',padding:'0px'}}/>} onClick={handleExpandClick}>
+              {comentarios.length} comentarios 
+            </Button>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
