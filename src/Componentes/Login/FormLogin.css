@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items:center;
     width: 30%;
-    height: 50%;
+    
     background-color: white;
     border-radius: 5px;
     padding: 20px;
@@ -25,6 +25,11 @@
 .text_cadastrar{
     margin: 13px 0px;
     
+}
+.uploadImagemContainer{
+    width: 350px;
+    height: 200px;
+    border: solid 1px black;
 }
 @media (max-width:500px) {
     .camposForm{

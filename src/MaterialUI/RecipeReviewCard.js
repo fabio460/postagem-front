@@ -204,8 +204,9 @@ export default function RecipeReviewCard({item}) {
             </div>
           </div>
           <Divider sx={{margin:'10px auto'}}/>
-
+          <div>{item.titulo !=='undefined'   && item.titulo}</div>
         <div className='post_body'>
+           
             <img className='post_body_imagem' src={item.imagem} alt={item.userName}/>
         </div>
     

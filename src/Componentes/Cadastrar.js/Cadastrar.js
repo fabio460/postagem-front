@@ -3,9 +3,7 @@
 
 import React, { useEffect, useState } from 'react'
 import './Cadastrar.css'
-
 import TextField from '@mui/material/TextField';
-
 import {useNavigate} from 'react-router-dom'
 import { Button } from '@mui/material';
 import {  useSelector } from 'react-redux';
@@ -97,8 +95,8 @@ export default function Cadastrar() {
                 onChange={handleChangeSenha}
                 sx={{ m: 1, width: '100%' }}
             />    
-            <UploadButtonsCadastro setAvatar={setAvatar}/>
-            
+            <UploadButtonsCadastro setImagem={setAvatar}/>
+            <div></div>
             <Button variant="contained" sx={{width:"100%"}} onClick={Cadastrar}>Cadastrar</Button>
     </div>
   </div>  
