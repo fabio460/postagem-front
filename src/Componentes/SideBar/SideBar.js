@@ -11,13 +11,18 @@ export default function SideBar() {
   useEffect(()=>{
     getUsuarios()
     console.log(list.userName)
-  },[])  
+  },[list.userName])  
   
   return (
     <>
        <div style={{padding:"17px"}}>
         {list.map(item=>{
-            return<div style={{display:"flex",alignItems:"center",margin:"10px 0px"}}>
+            return<div style={{display:"flex",
+              alignItems:"center",
+              margin:"10px 0px",
+              color:'black',
+              fontWeight:'bold'
+              }}>
                 <Avatar src={item.avatar} alt={item.userName} sx={{marginRight:"10px"}}/>
                 <div>{item.userName}</div>
             </div>

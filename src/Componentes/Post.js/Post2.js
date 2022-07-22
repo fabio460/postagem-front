@@ -12,6 +12,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
+import InputComentarios from '../../MaterialUI/InputComentarios';
 export default function Post2({item}) {
   let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'))
   const [selecionado,setSelecionado]=useState(false)
@@ -197,13 +198,18 @@ export default function Post2({item}) {
                         </div>
                 </div>
                 <div className='likesContainerUpp'>
-                <Divider sx={{margin:'5px auto'}}/>
-                      <Button  startIcon={ <ThumbUpAltIcon/>} color={selecionado?"primary":"inherit"} onClick={e=> ativo(item)}>
-                          {selecionado? 'curtido':"curtir"}
-                      </Button>
-                      <Button sx={{marginLeft:'30px'}}  startIcon={ <CommentIcon />}>
-                          comentarios
-                      </Button>
+                    <Divider sx={{margin:'5px auto'}}/>
+                    <Button  startIcon={ <ThumbUpAltIcon/>} color={selecionado?"primary":"inherit"} onClick={e=> ativo(item)}>
+                        {selecionado? 'curtido':"curtir"}
+                    </Button>
+                    <Button sx={{marginLeft:'20px'}}  startIcon={ <CommentIcon />}>
+                        comentarios
+                    </Button>
+                    <Divider sx={{margin:'5px auto'}}/>
+                    <div className='inputComentarios'> 
+                      
+                      <InputComentarios/>
+                    </div>
                 </div>
         </div>
     </div>
