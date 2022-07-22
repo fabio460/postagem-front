@@ -48,7 +48,6 @@ export default function RecipeReviewCard({item}) {
   var data = ""
   if (dat) {
      data = dat.split('T')[0].split('-')
-    console.log()
   }
   return (
     <Card sx={{ maxWidth: '100%',margin:'auto' }}>

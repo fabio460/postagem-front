@@ -15,7 +15,7 @@ body{
   margin-top: 80.5px;
 }
 .postBodyItem{
-  background-color: #303744;
+  background-color: #e5e8ed;
   margin: 20px;
   border-radius: 5px;
   padding: 10px;
@@ -72,7 +72,7 @@ body{
     margin-top: 80.5px;
   }
   .postBodyItem{
-    background-color: #303744;
+    background-color: #e1e6f0;
     margin: 10px;
     border-radius: 5px;
     padding: 10px;
@@ -94,7 +94,7 @@ body{
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #f7f7f7;
   width: 100%;
   color: white;
   height: 100vh;

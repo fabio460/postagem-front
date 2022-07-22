@@ -1,4 +1,4 @@
-import { Avatar, IconButton } from '@mui/material'
+import { Avatar, Divider, IconButton } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { dataTransform, deletar, link } from '../../uteis'
 import './Post.css'
@@ -131,11 +131,11 @@ export default function Post2({item}) {
     <div className='Post_container'>
         <div className='post_header'>
             <div className='post_header_left'>
-                <Avatar src={item.avatar}/>
+                <Avatar src={item.avatar} sx={{marginRight:'7px'}}/>
                 <div >
-                    <div className='post_header_left_titulo'>{item.titulo}</div>
+                    <div className='post_header_left_titulo'>{item.userName}</div>
                     <div className='post_header_left_data'>
-                        postado por <span>{item.email === usuarioLogado.email ? 'voçê' : item.userName} </span>
+                        <span>{item.email === usuarioLogado.email ? 'voçê' : item.userName} </span>
                          - {dataTransform(item.data)}
                     </div>
                 </div>
@@ -143,23 +143,25 @@ export default function Post2({item}) {
             <div className='post_header_right'>
                 <IconButton aria-label="settings">
                    {item.email === usuarioLogado.email &&
-                     <DeleteIcon onClick={()=> deletar(item)} color='error'/>
+                     <DeleteIcon onClick={()=> deletar(item)} color='primary'/>
                    }
                 </IconButton>
                 
             </div>
         </div>
-        <div className='post_titulo'>{item.postagem}</div>
+        <Divider sx={{margin:'10px auto'}}/>
+        
         <div className='post_body'>
-            
             <img className='post_body_imagem' src={item.imagem} alt={item.userName}/>
         </div>
+        <div className='post_titulo'>{item.postagem !=='undefined' && item.postagem}</div>
+        {likes.length === 0 ?<Divider sx={{display:'none'}}/>:<Divider/>}
         <div className='post_footer'>
             
             <div className='likesContainer'>
                         <ContainersLikes/>
                         <div style={{ alignItems:'center',display:visivel}}>
-                            <Button color={"inherit"}  onClick={handleClickOpen('paper')}>
+                            <Button color={"success"}  onClick={handleClickOpen('paper')}>
                                 <VisibilityIcon/>
                             </Button>
                            
@@ -195,12 +197,12 @@ export default function Post2({item}) {
                         </div>
                 </div>
                 <div className='likesContainerUpp'>
-                      
+                <Divider sx={{margin:'5px auto'}}/>
                       <Button  startIcon={ <ThumbUpAltIcon/>} color={selecionado?"primary":"inherit"} onClick={e=> ativo(item)}>
-                          curtir
+                          {selecionado? 'curtido':"curtir"}
                       </Button>
-                      <Button sx={{marginLeft:'30px'}} color={"inherit"} startIcon={ <CommentIcon />}>
-                          comentar
+                      <Button sx={{marginLeft:'30px'}}  startIcon={ <CommentIcon />}>
+                          comentarios
                       </Button>
                 </div>
         </div>

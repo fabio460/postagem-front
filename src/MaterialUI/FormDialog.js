@@ -27,7 +27,7 @@ export default function FormDialog() {
   function fazerPostagem(params) {
     try {
        
-    if(titulo && postagem && imagem){
+    if(imagem){
       const formdata = new FormData()
       formdata.append("imagem",imagem)
       formdata.append("titulo",titulo)

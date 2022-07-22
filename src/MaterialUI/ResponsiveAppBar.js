@@ -53,7 +53,7 @@ const ResponsiveAppBar = ({usuarioLogado}) => {
 
   return (
     <AppBar position="fixed" >
-      <Container maxWidth="xl" sx={{background:"#485d63" }}>
+      <Container maxWidth="xl" sx={{background:"white",color:'black' }}>
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1}} />
           <Typography
