@@ -13,8 +13,9 @@
     
 }
 .post_header_left_titulo{
+    max-width: 370px;
+    word-break: break-all ;
 
-    word-break: break-all;
 }
 .post_header_left_data{
     word-wrap: break-word;
@@ -48,6 +49,8 @@
     margin: 10px;
     display: flex;
     justify-content: center;
+    word-break: break-all;
+    
 }
 .post_header_left_data{
     font-size: 12px;
@@ -82,4 +85,5 @@
     .post_body{
         width: 100%;
     }
+    
 }
